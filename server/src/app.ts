@@ -10,6 +10,12 @@ import morgan from 'morgan';
 
 // destructure port from environment variables, default to 4000
 const { PORT = 4000 } = process.env;
+import { isAPIKeyPopulated, checkForPlagarism } from './util';
+
+if (!isAPIKeyPopulated) {
+  console.error('OPENAI_API_KEY not set');
+  process.exit(1);
+}
 
 // define query interface
 interface Query {
@@ -85,8 +91,8 @@ app.get(
   }
 
   try {
-    // TODO: Call the OpenAI API instead of returning this string
-    const verdict = 'NOT YET IMPLEMENTED. This is where the response will be returned.'
+    // call the OpenAI API with this text body
+    const verdict = await checkForPlagarism(text);
     return res.send({verdict});
   } catch (error) {
     // typescript will infer the type of error to be Error
