@@ -14,4 +14,6 @@ OPENAI_API_KEY=sk-<your-api-key>
 - Run `npm run start-client` to start the client
 - Run `npm run start-server` to start the server
 - Open your browser to [http://localhost:1234](http://localhost:1234) to see the app in action
-- Follow the tutorial to build the app, or take a look at the solution branch
+- Follow the tutorial to build the app, or take a look at one of the solution branches:
+  - [Introduced OpenAI API](https://github.com/DevRocketCode/plagiarism-detection-service/tree/solution-1)
+  - [Formatted OpenAI response in a more helpful way](https://github.com/DevRocketCode/plagiarism-detection-service/tree/solution-2)
