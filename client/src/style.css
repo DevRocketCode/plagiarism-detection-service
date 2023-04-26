@@ -1,0 +1,70 @@
+/* sans-serif font from google */
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  font-family: 'Roboto', sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  background-image: linear-gradient(to bottom left, #00bcd4, #ab47bc);
+  color: #0297aa;
+  padding: 2rem;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#root > * {
+  width: 45rem;
+  margin: 2rem;
+  padding: 1rem;
+  /* subtle box shadow */
+  box-shadow: 0 0 7px rgba(0, 0, 0, 0.3);
+  /* rounded corners */
+  border-radius: .5rem;
+  background-color: #fff;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+form > * {
+  margin: .5rem 0;
+}
+
+#root > .warning {
+  background-color: #f3e5f5;
+  border: 1px solid #ab47bc;
+  color: #ab47bc;
+}
+
+#root > .success {
+  background-color: #e8f5e9;
+  border: 1px solid #4caf50;
+  color: #4caf50;
+}
+
+button {
+  background-color: #00bcd4;
+  color: #fff;
+  padding: .5rem 1rem;
+  border-radius: .5rem;
+  border: none;
+  margin: 1rem 1rem 0 1rem;
+}
+
+button:hover {
+  background-color: #0297aa;
+}
