@@ -7,6 +7,8 @@ export function App() {
     // state for input and output
     const [input, setInput] = useState('');
     const [output, setOutput] = useState(DEFAULT_RESPONSE);
+    const [detail, setDetail] = useState('');
+    const [showDetail, setShowDetail] = useState(false);
 
     // function to handle input change
     const handleChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
@@ -18,6 +20,8 @@ export function App() {
     const handleReset = () => {
         setInput('');
         setOutput(DEFAULT_RESPONSE);
+        setDetail('');
+        setShowDetail(false);
     }
 
     // function to handle form submit
@@ -41,6 +45,22 @@ export function App() {
             if (!output) {
                 alert('Something went wrong');
                 return;
+            }
+            try {
+                const json = JSON.parse(output);
+                console.log('json', json);
+                if (json.verdict) {
+                    setOutput(json.verdict);
+                }
+                if (json.detail) {
+                    setDetail(json.detail);
+                }
+                return;
+            } catch (error) {
+                if (error instanceof Error) {
+                    setOutput(output);
+                    return;
+                }
             }
             setOutput(output);
         } catch (error) {
@@ -77,6 +97,15 @@ export function App() {
         <div className={determineBannerClass()}>
             <h2>Verdict</h2>
             <p id="response-box">{output}</p>
+            {
+                detail && <button onClick={() => setShowDetail(true)}>Show Explanation</button>
+            }
         </div>
+        {
+            detail && showDetail && <div>
+                <h2>Explanation</h2>
+                <p id="detail-box">{detail}</p>
+            </div>
+        }
     </>
 }
