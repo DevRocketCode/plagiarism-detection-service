@@ -1,0 +1,41 @@
+{
+  "name": "plagiarism-detection-service",
+  "version": "1.0.0",
+  "description": "A plagiarism detection service built in TypeScript, using the ChatGPT API",
+  "main": "index.tsx",
+  "scripts": {
+    "start-client": "parcel client/src/index.html --open",
+    "start-server": "nodemon --watch 'server/src/**' --ext 'ts,json' --ignore 'server/src/**/*.spec.ts' --exec 'ts-node server/src/app.ts'"
+  },
+  "keywords": [
+    "ai",
+    "openai",
+    "responses",
+    "react"
+  ],
+  "author": "Preston Wallace",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/cors": "2.8.13",
+    "@types/csvtojson": "2.0.0",
+    "@types/express": "4.17.17",
+    "@types/json2csv": "5.0.3",
+    "@types/jsonwebtoken": "9.0.1",
+    "@types/node": "18.15.11",
+    "@types/react-dom": "18.0.11",
+    "@types/sequelize": "4.28.14",
+    "nodemon": "2.0.22",
+    "parcel-bundler": "1.12.5",
+    "ts-node": "10.9.1",
+    "typescript": "5.0.4"
+  },
+  "dependencies": {
+    "cors": "2.8.5",
+    "dotenv": "16.0.3",
+    "express": "4.18.2",
+    "npm": "9.6.5",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "zod": "3.21.4"
+  }
+}
