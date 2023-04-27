@@ -98,7 +98,7 @@ export function App() {
             <h2>Verdict</h2>
             <p id="response-box">{output}</p>
             {
-                detail && <button onClick={() => setShowDetail(true)}>Show Explanation</button>
+                detail && <button onClick={() => setShowDetail(!showDetail)}>Show Explanation</button>
             }
         </div>
         {
