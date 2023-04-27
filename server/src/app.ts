@@ -10,7 +10,7 @@ import morgan from 'morgan';
 
 // destructure port from environment variables, default to 4000
 const { PORT = 4000 } = process.env;
-import { isAPIKeyPopulated, checkForPlagarism } from './util';
+import { isAPIKeyPopulated, checkForPlagiarism } from './util';
 
 if (!isAPIKeyPopulated) {
   console.error('OPENAI_API_KEY not set');
@@ -92,7 +92,7 @@ app.get(
 
   try {
     // call the OpenAI API with this text body
-    const verdict = await checkForPlagarism(text);
+    const verdict = await checkForPlagiarism(text);
     return res.send({verdict});
   } catch (error) {
     // typescript will infer the type of error to be Error

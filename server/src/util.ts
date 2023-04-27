@@ -13,9 +13,9 @@ const configuration = new Configuration({
 
 const openai = new OpenAIApi(configuration);
 
-export const checkForPlagarism = async (textBody: string): Promise<string | undefined> => {
+export const checkForPlagiarism = async (textBody: string): Promise<string | undefined> => {
 
-  const prompt = `Please check the following text for plagarism. Here is the text: "${textBody}". Give detail on why you think this is plagarized or not. If it is likely a quote, it should be categorized as "Plagarized", but give the explanation that it is a quote.`;
+  const prompt = `Please check the following text for plagiarism. Here is the text: "${textBody}". Give detail on why you think this is plagiarized or not. If it is likely a quote, it should be categorized as "Plagiarized", but give the explanation that it is a quote.`;
   const response = await openai.createCompletion({
     // different models are better at some things than others
     // for example, to moderate text, use text-moderation-stable
