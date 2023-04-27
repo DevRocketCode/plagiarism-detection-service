@@ -52,10 +52,10 @@ export function App() {
     }
 
     const determineBannerClass = () => {
-        if (output === 'Plagarized') {
+        if (output === 'Plagiarized') {
             return 'warning';
         }
-        if (output === 'Not Plagarized') {
+        if (output === 'Not Plagiarized') {
             return 'success';
         }
         return '';
@@ -63,7 +63,7 @@ export function App() {
 
     return <>
         {/* title */}
-        <h1>Plagarism Detection Service</h1>
+        <h1>Plagiarism Detection Service</h1>
         {/* form with input and an area to display output from an api call */}
         <form onSubmit={handleSubmit}>
             <label htmlFor="prompt">Text to Check</label>
